@@ -28,9 +28,9 @@ trait PlayerArgumentTrait {
     }
 
     /**
-     * @param Player $player
+     * @param Player $sender
      * @param string $label
      * @param array  $args
      */
-    abstract public function onPlayerExecute(Player $player, string $label, array $args): void;
+    abstract public function onPlayerExecute(Player $sender, string $label, array $args): void;
 }
