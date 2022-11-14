@@ -1,6 +1,6 @@
 {
-  "name": "abstract/plugin_name",
-  "description": "Description",
+  "name": "abstract/command-framework",
+  "description": "A framework for commands using PocketMine",
   "minimum-stability": "dev",
   "license": "Apache-2.0",
 
