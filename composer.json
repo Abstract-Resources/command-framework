@@ -1,7 +1,7 @@
 {
   "name": "abstract/command-framework",
   "description": "A framework for commands using PocketMine",
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "license": "Apache-2.0",
 
   "require": {
