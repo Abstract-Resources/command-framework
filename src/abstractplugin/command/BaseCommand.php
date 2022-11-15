@@ -6,9 +6,12 @@ namespace abstractplugin\command;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
+use pocketmine\plugin\PluginBase;
+use pocketmine\Server;
 use pocketmine\utils\TextFormat;
 use function array_shift;
 use function in_array;
+use function is_file;
 use function strtolower;
 
 abstract class BaseCommand extends Command implements ParentCommand {
@@ -79,4 +82,18 @@ abstract class BaseCommand extends Command implements ParentCommand {
      * @param array         $args
      */
     public function onConsoleExecute(CommandSender $sender, string $commandLabel, array $args): void {}
+
+    /**
+     * @param PluginBase $plugin
+     */
+    public static function init(PluginBase $plugin): void {
+        if (!is_file($bootstrap = 'phar://' . Server::getInstance()->getPluginPath() . $plugin->getName() . '.phar/vendor/autoload.php')) {
+            $plugin->getLogger()->error('Composer autoloader not found at ' . $bootstrap);
+            $plugin->getLogger()->warning('Please install/update Composer dependencies or use provided build.');
+
+            exit(1);
+        }
+
+        require_once($bootstrap);
+    }
 }

@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace abstractplugin\command;
 
-use pocketmine\command\CommandSender;
-use pocketmine\player\Player;
-use pocketmine\utils\TextFormat;
-
 abstract class Argument implements ParentCommand {
 
     /**
