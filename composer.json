@@ -5,11 +5,7 @@
   "license": "Apache-2.0",
 
   "require": {
-    "php": "^8.0",
-    "ext-yaml": "*",
-    "ext-json": "*",
-    "ext-mysqli": "*",
-    "ext-curl": "*"
+    "php": "^8.0"
   },
 
   "require-dev": {
